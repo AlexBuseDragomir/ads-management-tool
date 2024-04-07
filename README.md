@@ -1,6 +1,7 @@
 # Ads Management Tool NetRom Summercamp 2018
 
-Ads management web application created using PHP 7.2 and Symphony 4.1 during the 1 month NetRom Summercamp, back in 2018.   
+Ads management web application created using PHP 7.2 and Symphony 4.1 during the 1 month NetRom Summercamp, back in 2018.  
+
 Kept only the source code files and the static resources like images.   
 Did not store here any configuration files like the symfony.lock, composer.json, composer.lock etc.  
 
