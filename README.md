@@ -2,10 +2,10 @@
 
 Ads management web application created using PHP 7.2 and Symphony 4.1 during the 1 month NetRom Summercamp, back in 2018. 
 
-Discalimer: This is a simple project created for learning purposes. Any images or other visual resources used have been downloaded from [Pexels ](https://www.pexels.com/) which offers free stock photos.
+Discalimer: This is a simple project created for learning purposes. Any images or other visual resources used have been downloaded from [Pexels ](https://www.pexels.com/) which offers free stock photos.  
 
-If there is any image that contains a copyright, please notify me and I will delete it. 
-Please keep in mind that this is a non-commercial, educational purpose project. 
+If there is any image that contains a copyright, please notify me and I will delete it.   
+Please keep in mind that this is a non-commercial, educational purpose project.    
 
 Environment
 ------
