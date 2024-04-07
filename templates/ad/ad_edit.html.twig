@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Edit ad {% endblock %}
+
+{% block body %}
+
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    {{ form_end(form) }}
+    <a href="{{ path('edit_image', {'id': announcement.id}) }}">
+        <input class="btn btn-outline-info" type="submit" value="Ad new image">
+    </a>
+
+{% endblock %}

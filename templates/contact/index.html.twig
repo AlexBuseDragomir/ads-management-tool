@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Contact {% endblock %}
+
+{% block body %}
+    <br><br><br><br>
+    <div class="row featurette" >
+        <div class="col-md-7">
+            <h2 class="featurette-heading"> Contact </h2>
+            <p class="lead">
+                <br>
+                Adress : 25 Hickory Heights Drive, Hanover MD, Maryland 21076 <br>
+                Telephone number : +1-443-878-0688 <br>
+                Mobile number : +1-443-970-9707 <br>
+                Fax numbers : 443-112-3124 / 443-828-1198 <br>
+                Email adress : summerCampAds@marketing.us.com <br>
+                Latitude/Longitude : 39.184086 / -76.685074
+            </p>
+        </div>
+        <div class="col-md-5">
+            <img src="{{ asset("Static photos/company.jpeg") }}"
+                 class="featurette-image img-fluid mx-auto rounded img-thumbnail" alt="Image unavailable">
+        </div>
+    </div>
+
+    <br><br><br>
+    <img src="{{ asset("Static photos/map.jpeg") }}"
+         class="featurette-image img-fluid mx-auto rounded img-thumbnail" alt="Image unavailable">
+
+{% endblock %}

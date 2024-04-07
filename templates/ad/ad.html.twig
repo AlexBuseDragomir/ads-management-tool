@@ -1,0 +1,89 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{ element.title }} {% endblock %}
+
+{% block body %}
+
+    {#<nav aria-label="breadcrumb">#}
+        {#<ol class="breadcrumb">#}
+            {#<li class="breadcrumb-item active" aria-current="page">Category</li>#}
+            {#<li class="breadcrumb-item active" aria-current="page">Description</li>#}
+            {#<li class="breadcrumb-item active" aria-current="page">Details</li>#}
+            {#<li class="breadcrumb-item active" aria-current="page">Seller</li>#}
+
+        {#</ol>#}
+    {#</nav>#}
+    <br>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th scope="col">Category</th>
+            <th scope="col" style="width:450px;">Description</th>
+            <th scope="col" style="width:220px;">Details</th>
+            <th scope="col">Seller</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th scope="row">{{ element.category.name|capitalize }}</th>
+            <td>{{ element.description }}</td>
+
+            <td><p>
+                    Price : {{ element.price }}$<br>
+                    Starting date : {{ element.startdate|date("d/m/Y") }}<br>
+                    Expiry date : {{ element.expirydate|date("d/m/Y") }}
+                </p>
+            </td>
+
+            <td><p>
+                    Name : {{ element.user.name }} {{ element.user.surname }}<br>
+                    Username : {{ element.user.username }}<br>
+                    Email : {{ element.user.email }}<br>
+                    Phone: {{ element.user.phonenumber }}<br>
+                    Last login: {{ element.user.lastlogin|date('d/m/Y - H:m') }}
+                </p>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <br>
+    <img src="{{ asset('Images/AdImages/' ~ element.image) }}"
+        class="img-fluid rounded img-thumbnail" alt="Image unavailable">
+
+    <div class="my-3 p-3 bg-transparent rounded box-shadow">
+        <h6 class="border-bottom border-gray pb-2 mb-0">Comments ({{ commentCount }})</h6>
+
+        {% for comment in element.comments %}
+            <div class="media pt-3">
+                <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                    <div class="d-flex justify-content-between align-items-center w-100">
+                        <strong class="text-gray-dark">{{ comment.user.username }}</strong>
+
+                        {% if is_granted('ROLE_USER') %}
+                            {% if is_granted('ROLE_ADMIN') or app.user.username == comment.user.username %}
+                                <a href="{{ path('edit_comment', {'id': comment.id}) }}">Edit</a>
+                            {% else %}
+                                <a href="{{ path('new_comment', {'id': element.id}) }}">Reply</a>
+                            {% endif %}
+                        {% else %}
+                            No access
+                        {% endif %}
+
+                    </div>
+                    <span class="d-block">{{ comment.text }}</span>
+                </div>
+            </div>
+        {% endfor %}
+
+        <small class="d-block text-right mt-3">
+            <a href="#">Back to top</a>
+        </small>
+    </div>
+
+    {% if is_granted('ROLE_USER') %}
+        <a href="{{ path('new_comment', {'id': element.id}) }}">
+            <input class="btn btn-outline-info" type="submit" value="New comment">
+        </a>
+    {% endif %}
+
+{% endblock %}

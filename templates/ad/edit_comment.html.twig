@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Edit comment {% endblock %}
+
+{% block body %}
+
+    <div>
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        {{ form_end(form) }}
+
+        <form action="{{ path('delete_comment', {'id': comment.id}) }}" method="post">
+            <input class="btn btn-danger" type="submit" value="Delete comment">
+        </form>
+    </div>
+    <br>
+
+    <img src="{{ asset("Static photos/write.jpeg") }}"
+         class="rounded img-thumbnail" alt="Image unavailable" width = "1110px" height="400px">
+
+{% endblock %}

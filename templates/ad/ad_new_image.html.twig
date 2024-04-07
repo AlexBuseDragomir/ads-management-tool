@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} New image for ad {% endblock %}
+
+{% block body %}
+    <br><br>
+    <img src="{{ asset('Static photos/paint.jpeg') }}"
+        class="rounded img-thumbnail" alt="Image unavailable">
+    <br>
+
+    <div>
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

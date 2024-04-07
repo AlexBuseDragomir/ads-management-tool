@@ -1,0 +1,65 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} List of ads {% endblock %}
+
+{% block body %}
+<table class="table" id="announcement-table" bgcolor="#e0ffff">
+    <thead>
+        <tr>
+            <th scope="col" class="text-info">Id</th>
+            <th scope="col" class="text-info">Title</th>
+            <th scope="col" class="text-info">Description</th>
+            <th scope="col" class="text-info">Price</th>
+            <th scope="col" class="text-info">StartDate</th>
+            <th scope="col" class="text-info">ExpiryDate</th>
+            <th scope="col" class="text-info">Category</th>
+            <th scope="col" class="text-info">Action</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for announcement in announcements %}
+            <tr>
+                <td> {{ announcement.id }} </td>
+                <td>
+                    <a class="text-success" href="{{ path('ad_title', {'title': announcement.title}) }}">{{ announcement.title }}</a>
+                </td>
+                <td> {{ announcement.description }} </td>
+                <td> {{ announcement.price }} </td>
+                <td> {{ announcement.startdate|date("m/d/Y") }} </td>
+                <td> {{ announcement.expirydate|date("m/d/Y") }} </td>
+                <td> {{ announcement.category.name }} </td>
+                <td>
+                    {% if is_granted('ROLE_USER') %}
+                        {% if is_granted('ROLE_ADMIN') or app.user.username == announcement.user.username %}
+                            <a href="{{ path('edit_ad', {'id': announcement.id}) }}">
+                                <input class="btn btn-outline-info" type="submit" value="Edit">
+                            </a>
+                            &nbsp;&nbsp;&nbsp;
+                            <form action="{{ path('delete_ad', {'id': announcement.id}) }}" method="post">
+                                <input class="btn btn-outline-danger" type="submit" value="Delete">
+                            </form>
+                        {% else %}
+                            Access denied
+                        {% endif %}
+                    {% else %}
+                        Access denied
+                    {% endif %}
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
+
+{% block scripts %}
+    <script>
+        $(document).ready( function () {
+        $('#announcement-table').DataTable({
+            //"processing": true,
+            //"serverSide": true,
+            //"ajax": "scripts/server_processing.php"
+        });
+        });
+    </script>
+{% endblock %}

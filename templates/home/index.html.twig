@@ -1,0 +1,92 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Home {% endblock %}
+
+{% block body %}
+
+    <main role="main">
+
+        <!-- START THE FEATURETTES -->
+
+            <hr class="featurette-divider">
+
+            <div class="row featurette">
+                <div class="col-md-7">
+                    <h2 class="featurette-heading"> Welcome! <span class="text-muted"> We are happy to meet you </span></h2>
+                    <p class="lead"><br>Whether you want to sell something or want to buy a product, you are in the right place.
+                                    Thousands of announcements are waiting for you and many users are looking forward on
+                                    exchanging opinions about them by engaging in conversations thanks to the messaging feature.
+                    </p>
+                </div>
+                <div class="col-md-5">
+                    <img src="{{ asset("Static photos/monstera.jpeg") }}"
+                         class="featurette-image img-fluid mx-auto rounded img-thumbnail" alt="Image unavailable ">
+                </div>
+            </div>
+
+            <hr class="featurette-divider">
+
+            <div class="row featurette">
+                <div class="col-md-7 order-md-2">
+                    <h2 class="featurette-heading"><br> We care about you <span class="text-muted"> You decide what to share </span></h2>
+                    <p class="lead">You will always get clear and secured, verified information and guaranteed data confidentiality
+                                    and you can contact us at any time for help.<br>
+                                    We make efforts everyday to keep you satisfied and to offer you a safe and comfortable experience.
+                                    All that remains for you to do:<br>
+                                    Just enjoy our ads and search for anything you are interested in.
+                    </p>
+                </div>
+                <div class="col-md-5 order-md-1">
+                    <img src="{{ asset("Static photos/credit_card.jpeg") }}"
+                          class="featurette-image img-fluid mx-auto rounded img-thumbnail" alt="Image unavailable">
+                </div>
+            </div>
+
+            <hr class="featurette-divider">
+
+            <div class="row featurette">
+                <div class="col-md-7">
+                    <h2 class="featurette-heading"> The best place to sell your goods <br><span class="text-muted">Thousands of buyers in one place</span></h2>
+                    <p class="lead"><br>You have something to offer and want to let everyone know that? Nothing simpler, just add a
+                        new ad yourself and feel free to communicate with other sellers or your possible buyers.<br>
+                        Just register and you are free to post up to 100 announcements for free. Make sure to make them look great!
+                    </p>
+                </div>
+                <div class="col-md-5">
+                    <img src="{{ asset("Static photos/communicate.jpg") }}"
+                         class="featurette-image img-fluid mx-auto rounded img-thumbnail" alt="Image unavailable">
+                </div>
+            </div>
+
+            <hr class="featurette-divider">
+
+            <div class="row featurette">
+                <div class="col-md-7 order-md-2">
+                    <h2 class="featurette-heading"> No experience with online marketing? <span class="text-muted">Simplicity and efficiency meet here</span></h2>
+                    <p class="lead"><br>Our website has a design that makes navigation and searching very easy and fun,
+                        but you'll discover this in a moment.<br>
+                        Also, make sure to contact us whenever you have a question.<br>
+                        Happy web surfing!
+                    </p>
+                </div>
+                <div class="col-md-5 order-md-1">
+                    <img src="{{ asset("Static photos/marketing_machine.jpeg") }}"
+                         class="featurette-image img-fluid mx-auto rounded img-thumbnail" alt="Image unavailable">
+                </div>
+            </div>
+
+            <hr class="featurette-divider">
+
+            <!-- /END THE FEATURETTES -->
+
+        </div><!-- /.container -->
+
+
+        <!-- FOOTER -->
+        <footer class="container">
+            <p class="float-right"><a href="#">Back to top</a></p>
+            <p>&copy; July 2018 / SummerCamp Ads   &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+        </footer>
+    </main>
+
+{% endblock %}
