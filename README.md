@@ -6,7 +6,7 @@ I have retained only the source code and some resources like images, not to bloa
 Kept only the source code files and the static resources like images.   
 Did not store here any configuration files like the symfony.lock, composer.json, composer.lock etc.  
 
-Discalimer: This is a simple project created for learning purposes. Any images or other visual resources used have been downloaded from [Pexels ](https://www.pexels.com/) which offers free stock photos.  
+**Discalimer:** This is a simple project created for learning purposes. Any images or other visual resources used have been downloaded from [Pexels ](https://www.pexels.com/) which offers free stock photos.  
 
 If there is any image that contains a copyright, please notify me and I will delete it.   
 Please keep in mind that this is a non-commercial, educational purpose project.    
